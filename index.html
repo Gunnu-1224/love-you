@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Prince – 26 Gifts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+  margin:0;
+  font-family:'Comic Sans MS', cursive;
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb,#a6c1ee);
+  text-align:center;
+  color:#222;
+}
+.page{display:none; padding:30px;}
+.page.active{display:block;}
+h1{color:#b3005e;}
+
+.cake{
+  width:260px;
+  cursor:pointer;
+  animation:bounce 2s infinite;
+}
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+  gap:15px;
+}
+.box{
+  background:rgba(255,255,255,0.85);
+  border-radius:15px;
+  padding:20px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.box:hover{background:#ffd6e8;}
+.special{background:gold;}
+
+img{
+  width:100%;
+  max-width:300px;
+  border-radius:12px;
+  margin-top:15px;
+}
+
+#textBox{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  margin-top:20px;
+  font-size:18px;
+  color:#b3005e;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div id="p1" class="page active">
+  <h1>🎉 HAPPY BIRTHDAY PRINCE 🎉</h1>
+  <h3>Aapke liye birthday cake 🎂</h3>
+  <img src="images/cake.jpg" class="cake" ondblclick="go(2)">
+  <p>26 birthday ke 26 Gifts ke liye cake par double tap karo 💖</p>
+</div>
+
+<!-- PAGE 2 -->
+<div id="p2" class="page">
+  <h1>🎁 Surprising Gifts</h1>
+  <div class="grid">
+    <div class="box" onclick="showImg('images/gift1.jpg')">Gift 1</div>
+    <div class="box" onclick="showImg('images/gift2.jpg')">Gift 2</div>
+    <div class="box" onclick="showImg('images/gift3.jpg')">Gift 3</div>
+    <div class="box" onclick="showImg('images/gift4.jpg')">Gift 4</div>
+    <div class="box special" onclick="go(3)">Gift 5 ➜</div>
+  </div>
+  <div id="imgbox"></div>
+</div>
+
+<!-- PAGE 3 -->
+<div id="p3" class="page">
+<h1>💌 Gifts 6 – 15</h1>
+<div class="grid">
+  <div class="box" onclick="showText(q1)">Gift 6</div>
+  <div class="box" onclick="showText(q2)">Gift 7</div>
+  <div class="box" onclick="showText(q3)">Gift 8</div>
+  <div class="box" onclick="showText(q4)">Gift 9</div>
+  <div class="box" onclick="showText(q5)">Gift 10</div>
+  <div class="box" onclick="showText(q6)">Gift 11</div>
+  <div class="box" onclick="showText(q7)">Gift 12</div>
+  <div class="box" onclick="showText(q8)">Gift 13</div>
+  <div class="box" onclick="showText(q9)">Gift 14</div>
+  <div class="box special" onclick="go(4)">Gift 15 ➜</div>
+</div>
+<div id="textBox"></div>
+</div>
+
+<!-- PAGE 4 -->
+<div id="p4" class="page">
+<h1>📸 Memories Gifts</h1>
+<div class="grid">
+  <div class="box" onclick="showImg('images/gift16.jpg')">Gift 16</div>
+  <div class="box" onclick="showImg('images/gift17.jpg')">Gift 17</div>
+  <div class="box" onclick="showImg('images/gift18.jpg')">Gift 18</div>
+  <div class="box" onclick="showImg('images/gift19.jpg')">Gift 19</div>
+  <div class="box" onclick="showImg('images/gift20.jpg')">Gift 20</div>
+  <div class="box" onclick="showImg('images/gift21.jpg')">Gift 21</div>
+  <div class="box" onclick="showImg('images/gift22.jpg')">Gift 22</div>
+  <div class="box" onclick="showImg('images/gift23.jpg')">Gift 23</div>
+  <div class="box" onclick="showImg('images/gift24.jpg')">Gift 24</div>
+  <div class="box" onclick="showImg('images/gift25.jpg')">Gift 25</div>
+  <div class="box special" onclick="go(5)">Gift 26 ➜</div>
+</div>
+<div id="imgbox2"></div>
+</div>
+
+<!-- PAGE 5 -->
+<div id="p5" class="page">
+<h1>🎉 Final Gift 🎉</h1>
+<p style="font-size:20px">
+Prince 💖<br>
+Tum meri zindagi ka sabse pyara hissa ho.<br>
+Happy Birthday my love 🎂🎈
+</p>
+</div>
+
+<script>
+function go(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('p'+n).classList.add('active');
+}
+
+function showImg(src){
+  if(document.getElementById('imgbox'))
+    document.getElementById('imgbox').innerHTML = "<img src='"+src+"'>";
+  if(document.getElementById('imgbox2'))
+    document.getElementById('imgbox2').innerHTML = "<img src='"+src+"'>";
+}
+
+function showText(text){
+  document.getElementById('textBox').innerHTML = text;
+}
+
+const q1="Happy Birthday my love… tum meri zindagi ka wo hissa ho jise main kabhi khona nahi chahti.";
+const q2="Tum meri muskurahat ka reason ho… aur main tumhe hamesha khush dekhna chahti hoon.";
+const q3="Mein tumhe IAS ke uniform me dekhna chahti hu bass my soulmate.";
+const q4="Bhari mehfil me mohabbat ka zikar hua, humne sirf aapki aur dekha.";
+const q5="Likhu toh lafj tum ho… sach kahu toh mohabbat tum ho!";
+const q6="Mujhe milna hai tumse us jahan me jaha bichhadne ka riwaaz na ho.";
+const q7="Bahut khaas ho tum… chand ho tum.";
+const q8="Jitna pyaar main tumse karti hoon, shabdon me nahi likh paati.";
+const q9="Aap thoda muh kam fulaya karo 😄";
+</script>
+
+</body>
+</html>
